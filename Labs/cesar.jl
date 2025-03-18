@@ -28,3 +28,33 @@ println("Зашифрованный текст: ", ciphertext)
 # Расшифровка выполняется путем применения шифра Цезаря с отрицательным ключом
 decrypted_text = caesar_cipher(ciphertext, -key)
 println("Расшифрованный текст: ", decrypted_text)
+
+# Функция для шифрования текста шифром Атбаш
+function atbash_cipher(text::String)
+    # Создаем массив для хранения зашифрованного текста
+    encrypted_text = []
+    
+    # Проходим по каждому символу в тексте
+    for char in text
+        if 'a' <= char <= 'z'  # Если символ - строчная буква
+            push!(encrypted_text, Char(Int('z') - (Int(char) - Int('a'))))
+        elseif 'A' <= char <= 'Z'  # Если символ - заглавная буква
+            push!(encrypted_text, Char(Int('Z') - (Int(char) - Int('A'))))
+        else
+            # Если символ не является буквой, оставляем его без изменений
+            push!(encrypted_text, char)
+        end
+    end
+    
+    # Преобразуем массив символов обратно в строку и возвращаем результат
+    return join(encrypted_text)
+end
+
+# Пример использования:
+plaintext = "Hello, World!"
+ciphertext = atbash_cipher(plaintext)
+println("Зашифрованный текст: ", ciphertext)
+
+# Расшифровка выполняется повторным применением шифра Атбаш
+decrypted_text = atbash_cipher(ciphertext)
+println("Расшифрованный текст: ", decrypted_text)

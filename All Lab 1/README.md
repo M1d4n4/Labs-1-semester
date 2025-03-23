@@ -44,7 +44,9 @@
 #### Реализация шифра Цезаря
 
 # Шифр Цезаря
+
 function caesar_cipher(text::String, key::Int)
+
     alphabet = 'а':'я'
     alphabet_length = length(alphabet)
     cipher_dict = Dict{Char, Char}()
@@ -57,7 +59,9 @@ function caesar_cipher(text::String, key::Int)
 end
 
 # Шифр Атбаш
+
 function atbash_cipher(text::String)
+
     alphabet = 'а':'я'
     alphabet_length = length(alphabet)
     cipher_dict = Dict{Char, Char}()

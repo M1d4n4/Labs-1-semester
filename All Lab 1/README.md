@@ -44,6 +44,7 @@
 #### Реализация на Julia
 
 const LOWER_ALPHABET = "абвгдежзийклмнопрстуфхцчшщъыьэюя"
+
 const UPPER_ALPHABET = uppercase(LOWER_ALPHABET)
 
 ##### Шифр Цезаря
